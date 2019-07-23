@@ -1,0 +1,126 @@
+
+
+#main{
+    margin-left: 20%;
+    margin-top: 50px;
+    height: 400px;
+    width: 500px;
+    border: 1px solid blue;
+    position: relative;
+}
+
+.choise{
+    height: 20px;
+    width: 50px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 50px;
+}
+
+#div1{
+    left: 40px;
+}
+
+#div2{
+    left: 125px;
+}
+
+#div3{
+    left: 210px;
+}
+
+#divlist{
+    position: absolute;
+    top: 130px;
+    left: 50px;
+    width: 450px;
+    
+}
+
+#addbtn,#cleanbtn,#againbtn{
+    background-color: #e6e6e6;
+    border: 1px solid #e6e6e6;
+    position: absolute;
+    top: 50px;
+}
+
+#addbtn{
+    left: 295px;
+}
+
+#cleanbtn{
+    left: 370px;
+}
+
+#againbtn{
+    left: 445px;
+}
+
+#pid1{
+    position: absolute;
+    top: 100px;
+    left: 300px;
+}
+
+#pid2{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+
+#input1{
+    position: absolute;
+    right: 120px;
+}
+
+#input2{
+    position: absolute;
+    right: 70px;
+}
+
+
+.option{
+    background-color: rgb(81, 139, 214);
+    border: none;
+    height: 30px;
+    width: 50px;;
+    position: absolute;
+}
+
+#A{
+    top: 50px;
+    left: 550px;
+}
+
+#B{
+    top: 50px;
+    left: 650px
+}
+
+#C{
+    top: 50px;
+    left: 750px;
+}
+
+#D{
+    top: 100px;
+    left: 550px;
+}
+
+#E{
+    top: 100px;
+    left: 650px;
+}
+
+#F{
+    top: 100px;
+    left: 750px;
+}
+
+#p1,#p2,#p3{
+    text-align: center;
+}
+
+.span1{
+    width: 42px;
+}
