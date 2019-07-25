@@ -4,214 +4,45 @@ var cor = [];
 var c1 = 0;
 var c2 = 0;
 
-var choose1 = function(){
+$(document).ready(function () {
 
-    if($("#p1").html() == "A" || $("#p2").html() == "A" || $("#p3").html() == "A"){
+    $(".option").on("click",function(e){
 
-        alert("已选择过相同字母");
+        var target = $(event.target);
 
-    }else if($("#p1").html() != ""){
+        var t = target.text();
 
-        if($("#p2").html() != ""){
+        if($("#p1").html() == t || $("#p2").html() == t || $("#p3").html() == t){
 
-            if($("#p3").html() != ""){
+            alert("已选择过相同字母");
 
-                alert("已选满三个选项");
+        }else if($("#p1").html() != ""){
 
-            }else if($("#p3").html() == ""){
+            if($("#p2").html() != ""){
 
-                document.getElementById("p3").innerHTML = "A";
+                if($("#p3").html() != ""){
 
-            }
+                    alert("已选满三个选项");
 
-        }else if($("#p2").html() == ""){
+                }else if($("#p3").html() == ""){
 
-            document.getElementById("p2").innerHTML = "A";
+                    document.getElementById("p3").innerHTML = t;
 
-        }
+                }
 
-    }else if($("#p1").html() == ""){
+            }else if($("#p2").html() == "")
 
-        document.getElementById("p1").innerHTML = "A";
+             document.getElementById("p2").innerHTML = t;
 
-    }
+        }else if($("#p1").html() == ""){
 
-}
-
-
-var choose2 = function(){
-
-    if($("#p1").html() == "B" || $("#p2").html() == "B" || $("#p3").html() == "B"){
-
-        alert("已选择过相同字母");
-        
-    }else if($("#p1").html() != ""){
-
-        if($("#p2").html() != ""){
-
-            if($("#p3").html() != ""){
-
-                alert("已选满三个选项");
-
-            }else if($("#p3").html() == ""){
-
-                document.getElementById("p3").innerHTML = "B";
-
-            }
-
-        }else if($("#p2").html() == ""){
-
-            document.getElementById("p2").innerHTML = "B";
+            document.getElementById("p1").innerHTML = t;
 
         }
 
-    }else if($("#p1").html() == ""){
+    })
 
-        document.getElementById("p1").innerHTML = "B";
-
-    }
-    
-}
-
-
-var choose3 = function(){
-
-    if($("#p1").html() == "C" || $("#p2").html() == "C" || $("#p3").html() == "C"){
-
-        alert("已选择过相同字母");
-        
-    }else if($("#p1").html() != ""){
-
-        if($("#p2").html() != ""){
-
-            if($("#p3").html() != ""){
-
-                alert("已选满三个选项");
-
-            }else if($("#p3").html() == ""){
-
-                document.getElementById("p3").innerHTML = "C";
-
-            }
-
-        }else if($("#p2").html() == ""){
-
-            document.getElementById("p2").innerHTML = "C";
-
-        }
-
-    }else if($("#p1").html() == ""){
-
-        document.getElementById("p1").innerHTML = "C";
-
-    }
-    
-}
-
-
-var choose4 = function(){
-
-    if($("#p1").html() == "D" || $("#p2").html() == "D" || $("#p3").html() == "D"){
-
-        alert("已选择过相同字母");
-        
-    }else if($("#p1").html() != ""){
-
-        if($("#p2").html() != ""){
-
-            if($("#p3").html() != ""){
-
-                alert("已选满三个选项");
-
-            }else if($("#p3").html() == ""){
-
-                document.getElementById("p3").innerHTML = "D";
-
-            }
-
-        }else if($("#p2").html() == ""){
-
-            document.getElementById("p2").innerHTML = "D";
-
-        }
-
-    }else if($("#p1").html() == ""){
-
-        document.getElementById("p1").innerHTML = "D";
-
-    }
-    
-}
-
-
-var choose5 = function(){
-
-    if($("#p1").html() == "E" || $("#p2").html() == "E" || $("#p3").html() == "E"){
-
-        alert("已选择过相同字母");
-        
-    }else if($("#p1").html() != ""){
-
-        if($("#p2").html() != ""){
-
-            if($("#p3").html() != ""){
-
-                alert("已选满三个选项");
-
-            }else if($("#p3").html() == ""){
-
-                document.getElementById("p3").innerHTML = "E";
-
-            }
-
-        }else if($("#p2").html() == ""){
-
-            document.getElementById("p2").innerHTML = "E";
-
-        }
-
-    }else if($("#p1").html() == ""){
-
-        document.getElementById("p1").innerHTML = "E";
-
-    }
-    
-}
-
-
-var choose6 = function(){
-
-    if($("#p1").html() == "F" || $("#p2").html() == "F" || $("#p3").html() == "F"){
-
-        alert("已选择过相同字母");
-        
-    }else if($("#p1").html() != ""){
-
-        if($("#p2").html() != ""){
-
-            if($("#p3").html() != ""){
-
-                alert("已选满三个选项");
-
-            }else if($("#p3").html() == ""){
-
-                document.getElementById("p3").innerHTML = "F";
-
-            }
-
-        }else if($("#p2").html() == ""){
-
-            document.getElementById("p2").innerHTML = "F";
-
-        }
-
-    }else if($("#p1").html() == ""){
-
-        document.getElementById("p1").innerHTML = "F";
-
-    }
-    
-}
+});
 
 
 var add = function(){
@@ -310,7 +141,7 @@ var again = function(){
     num = 0;
 
     random();
-
+    clean();
 }
 
 var random = function(){
@@ -335,8 +166,10 @@ var random = function(){
 
     var r2 = Math.floor(Math.random() * 6 + 1);
 
-    for(var i = r2;r2 == r1;){
+    while(r2 == r1){
+
         r2 = Math.floor(Math.random() * 6 + 1);
+
     }
     
     if(r2 == "1"){
@@ -355,8 +188,10 @@ var random = function(){
 
     var r3 = Math.floor(Math.random() * 6 + 1);
 
-    for(var i = r3;r3 == r1 || r3 == r2;){
+    while(r3 == r1 || r3 == r2){
+
         r3 = Math.floor(Math.random() * 6 + 1);
+
     }
 
     if(r3 == "1"){
